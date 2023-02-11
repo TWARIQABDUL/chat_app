@@ -797,6 +797,67 @@ section {
   background-repeat: no-repeat;
   background-clip: padding-box;
 }
+/* comment css */
+
+.comment-holder{
+  background-color: var(--darkbg);
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  width:calc(100% - 15px);
+  padding: 10px 5px;
+  height: 100vh;
+}
+.comment-holder .text-input-box{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment-holder .text-input-box input{
+  height: 40px;
+  width: 80%;
+  font-size: 20px;
+  border-radius: 20px;
+}
+.comment-holder .text-input-box button{
+  width: 20%;
+  border-radius: 20px;
+  height: 40px;
+
+}
+.comment-holder .list-comment-box{
+  margin-top: 20px;
+  color: #b1b6ba;
+  display: flex;
+  flex-direction: column;
+}
+.comment-holder .list-comment-box .comment-box{
+  display: flex;
+  align-items: center;
+  margin: 10px 5px;
+  background-color: var(--blackheader);
+  /* flex-direction: column; */
+
+}
+.comment-holder .list-comment-box .comment-box img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.comment-holder .list-comment-box .comment-box .text-coment{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.comment-holder .close{
+  width: 40px;
+  padding: 10px 7px;
+  position: relative;
+  left: calc(100% - 40px);
+}
 @media screen and (max-width: 800px) {
   .sm-screen {
     display: block

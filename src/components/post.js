@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { FiMoreHorizontal, FiSend } from 'react-icons/fi'
 import { BsFillHeartFill } from 'react-icons/bs'
 import { FaRegComment } from 'react-icons/fa'
@@ -6,10 +6,14 @@ import { Link } from 'react-router-dom'
 import {MdPublic} from 'react-icons/md'
 import SessionContext from '../session/session'
 import axios from 'axios'
-
+import Comment from './comment'
 function Post({ post }) {
+  const [comment,showCMNT]=useState(false)
+  const [posto,setPost]=useState()
   const {session} = useContext(SessionContext);
-
+  const showComment =(some)=>{
+    showCMNT(!comment)
+  }
   const urls = "https://testafriatemarket.000webhostapp.com/resources/img/";
   const like =(use)=>{
     const pst_to_like = use;
@@ -42,7 +46,6 @@ function Post({ post }) {
       <div className='media'>
         <p>{post.post}</p>
         {post.img == 0 ? '' : <img src={urls + post.img} className='post-img' />}
-        {/* <img src={urls + post.img} className='post-img' /> */}
       </div>
       <div className='bottom-user'>
         <div>
@@ -51,11 +54,15 @@ function Post({ post }) {
           }}  />
           <span>{post.likes}</span></div>
         <div>
-          <FaRegComment className='icon ' />
+          <FaRegComment className='icon ' onClick={()=>{
+            showComment(post.post_ID)
+            setPost(post.post_ID)
+          }}/>
           <span>100,3</span>
         </div>
         <div><FiSend className='icon' /></div>
       </div>
+      {comment ? <Comment post={posto} fun={showComment}/> :''}
     </div>
   )
 }
