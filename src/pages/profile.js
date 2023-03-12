@@ -26,7 +26,8 @@ function Profile() {
             .then(resdt => setInfo(resdt))
     }, [])
     const Logout = () => {
-        localStorage.removeItem("sessionData");
+        localStorage.clear();
+        // localStorage.removeItem("profile");
         setSession(null)
         navigate('/')
     }

@@ -37,8 +37,14 @@ function ChatRoom() {
             }).then((res) => {
                 // console.log(res.data)
                 let lastelem = messageList.length
+                var newID = 0
+                if (lastelem<0) {
+                    newID = 1
+                }else{
+                    newID = messageList[lastelem - 1].ID + 1
+                }
                 let newmessage = {
-                    ID: messageList[lastelem - 1].ID + 1,
+                    ID: newID,
                     sender: session,
                     reciever: reciever,
                     conv_id: conv_id,

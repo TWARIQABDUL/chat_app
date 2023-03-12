@@ -11,6 +11,7 @@ function GetPost() {
     .then(res =>{ 
       setPost(res.data)
       setLoading(false)
+      // localStorage.setItem("my_pic",)
     })
     // .then(resData=>setPost(resData))
     .catch((error)=>{

@@ -823,6 +823,8 @@ section {
   border-radius: 20px;
 }
 .comment-holder .text-input-box button{
+  background-color: #202023;
+  color: #F4F4F4;
   width: 20%;
   border-radius: 20px;
   height: 40px;
@@ -833,6 +835,7 @@ section {
   color: #b1b6ba;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 .comment-holder .list-comment-box .comment-box{
   display: flex;
@@ -857,6 +860,9 @@ section {
   padding: 10px 7px;
   position: relative;
   left: calc(100% - 40px);
+  background-color: #202023;
+  border-radius: 5px;
+  color: #F4F4F4;
 }
 @media screen and (max-width: 800px) {
   .sm-screen {

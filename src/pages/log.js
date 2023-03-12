@@ -41,6 +41,9 @@ function Login() {
             // var dd = JSON.parse(resp.data)
             if (resp.status == 200 && resp.data.status == 'succes') {
                 window.localStorage.setItem('sessionData', JSON.stringify(resp.data.uid));
+                window.localStorage.setItem('profile',"default.png");
+                window.localStorage.setItem('name',uname);
+                // window.localStorage.setItem('email',email);
                 navigate('/')
                 setSession(resp.data.uid)
                 setLoad(false)
@@ -96,11 +99,14 @@ function Login() {
             console.log(resp.data.rText);
             if (resp.data.rText == "succes" && resp.status == 200) {
                 window.localStorage.setItem('sessionData', JSON.stringify(resp.data.user));
+                window.localStorage.setItem('profile',"default.png");
+                window.localStorage.setItem('name',userName);
+                window.localStorage.setItem('email',email);
+
+
                 setSession(resp.data.user)
                 setLoad(false)
                 navigate('/')
-                // setSession(resp.data.user)
-                // console.log(resp.data);
             }
             // console.log();
         }).catch(error =>{

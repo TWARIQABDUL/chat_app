@@ -45,7 +45,7 @@ function Post({ post }) {
       </div>
       <div className='media'>
         <p>{post.post}</p>
-        {post.img == 0 ? '' : <img src={urls + post.img} className='post-img' />}
+        {post.img == 0 ? '' : <img loading ="lazy" src={urls + post.img} className='post-img' />}
       </div>
       <div className='bottom-user'>
         <div>
