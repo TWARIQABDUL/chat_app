@@ -25,7 +25,7 @@ function Comment(prop) {
         }).then(res=>{
             let lastComment = commentList.length
             var id =0
-            if (lastComment<1) {
+            if (lastComment === 0) {
                 id = 1  
             }else{
                 id = parseInt(comentList[lastComment-1].ID)+1

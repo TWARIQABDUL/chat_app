@@ -36,12 +36,14 @@ function ChatRoom() {
                 config: { headers: { 'Content-Type': 'multipart/form-data' } }
             }).then((res) => {
                 // console.log(res.data)
-                let lastelem = messageList.length
+                var lastelem = messageList.length
                 var newID = 0
-                if (lastelem<0) {
+                if (lastelem===0) {
                     newID = 1
+                    console.log(newID);
                 }else{
-                    newID = messageList[lastelem - 1].ID + 1
+                    newID = parseInt(messageList[lastelem - 1].ID) + 1
+                    console.log(newID);
                 }
                 let newmessage = {
                     ID: newID,
